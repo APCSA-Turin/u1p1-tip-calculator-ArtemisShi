@@ -12,20 +12,20 @@ tip = tipB/100.0;
 double billTip = tip + cost;
 double per = cost/people; // per person before tip
 int perB = (int) ((per*100) + 0.5); //not a new variable to be used
-per = perB/100.0;
+double perC = perB/100.0;
 double tipP = tip/people; //tipP is tip per person
 int tipPA = (int) ((tipP * 100)+ 0.5); //not a new variable to be used
-tipP = tipPA/100.0;
-double totalCost = tipP + per;
+double tipPC = tipPA/100.0;
+double totalCost = ((int) ((tipP + per)*100)/100.0);
                        
         result.append("-------------------------------\n");
-        result.append("Total bill before tip: " +"$" + cost ); //concatenate to this string. DO NOT ERASE AND REWRITE
-        result.append("Total percentage: " + percent +"%" );
-        result.append("Total tip: " +"$" + tip);
-        result.append("Total Bill with tip: " +"$" + billTip);
-        result.append("Per person cost before tip: " + "$" + per );
-        result.append("Tip per person: " + "$" + tipP);
-        result.append("Total cost per person: " + "$" + totalCost);
+        result.append("Total bill before tip: " +"$" + cost + "\n"); //concatenate to this string. DO NOT ERASE AND REWRITE
+        result.append("Total percentage: " + percent +"%\n" );
+        result.append("Total tip: " +"$" + tip + "\n");
+        result.append("Total Bill with tip: " +"$" + billTip + "\n");
+        result.append("Per person cost before tip: " + "$" + perC +"\n");
+        result.append("Tip per person: " + "$" + tipPC + "\n");
+        result.append("Total cost per person: " + "$" + totalCost + "\n");
         result.append("-------------------------------\n");
 
 
@@ -34,9 +34,9 @@ double totalCost = tipP + per;
      //TEST YOUR PROGRAM IN main
      public static void main(String[] args) {
         //try different values for people, percent, and cost to test your program before running test cases
-        int people =6; 
-        int percent = 25;
-        double cost = 52.27;              
+        int people =12; 
+        int percent = 15;
+        double cost = 566.97;              
         System.out.println(calculateTip(people,percent,cost));
     }
 }
